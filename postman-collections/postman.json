@@ -1,0 +1,226 @@
+{
+	"info": {
+		"name": "Testing Postman",
+		"_postman_id": "a3c2b35f-ef3c-4a1c-a6c2-d5b3e7e148b5",
+		"description": "Collection of tests to ensure proper concurrency handling in datastore.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"user123\",\n\t\"name\": \"John Doe\",\n\t\"email\": \"john.doe@example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["users"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://localhost:8080/users/user123",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["users", "user123"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"user123\",\n\t\"name\": \"John Doe Updated\",\n\t\"email\": \"john.doe.updated@example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/user123",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["users", "user123"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"url": {
+					"raw": "http://localhost:8080/users/user123",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["users", "user123"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"product123\",\n\t\"name\": \"Product A\",\n\t\"description\": \"Description for Product A\",\n\t\"price\": 99.99\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/products",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["products"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://localhost:8080/products/product123",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["products", "product123"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"product123\",\n\t\"name\": \"Product A Updated\",\n\t\"description\": \"Updated description\",\n\t\"price\": 89.99\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/product123",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["products", "product123"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"url": {
+					"raw": "http://localhost:8080/products/product123",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["products", "product123"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"transaction123\",\n\t\"user_id\": \"user123\",\n\t\"product_id\": \"product123\",\n\t\"quantity\": 1,\n\t\"total\": 99.99\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/transactions",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["transactions"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transaction",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://localhost:8080/transactions/transaction123",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["transactions", "transaction123"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Transaction",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"transaction123\",\n\t\"user_id\": \"user123\",\n\t\"product_id\": \"product123\",\n\t\"quantity\": 2,\n\t\"total\": 199.98\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/transactions/transaction123",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["transactions", "transaction123"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Transaction",
+			"request": {
+				"method": "DELETE",
+				"url": {
+					"raw": "http://localhost:8080/transactions/transaction123",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["transactions", "transaction123"]
+				}
+			},
+			"response": []
+		}
+	]
+}
